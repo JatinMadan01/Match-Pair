@@ -18,7 +18,8 @@ h1 {
 
 .game-board {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    grid-template-columns: repeat(4, 120px); /* 4 columns */
+    grid-template-rows: repeat(4, 120px); /* 4 rows */
     gap: 10px;
     justify-content: center;
     margin-bottom: 20px;
