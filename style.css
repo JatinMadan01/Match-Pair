@@ -12,6 +12,10 @@ body {
     text-align: center;
 }
 
+h1 {
+    margin-bottom: 20px;
+}
+
 .game-board {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
@@ -32,15 +36,48 @@ body {
     color: #fff;
     border-radius: 8px;
     position: relative;
+    overflow: hidden;
 }
 
-.card.flipped {
+.card .card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s;
+    transform-style: preserve-3d;
+}
+
+.card.flipped .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card .card-front,
+.card .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+.card .card-front {
+    background-color: #ccc;
+}
+
+.card .card-back {
     background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     color: #000;
+    transform: rotateY(180deg);
 }
 
-.card img {
-    max-width: 80%;
-    max-height: 80%;
-    display: block;
+#attempts-counter {
+    margin-bottom: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
 }
